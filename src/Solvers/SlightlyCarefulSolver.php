@@ -16,6 +16,7 @@ class SlightlyCarefulSolver extends HnbSolver
 
     protected function prepare(): self
     {
+        // This prepopulation consumes quite a bit of memory resource with level > 6
         $this->permute($this->getHnb()->getCharacters());
         $this->possibles = $this->getPermutations();
 

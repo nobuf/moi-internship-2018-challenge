@@ -2,7 +2,8 @@
 
 namespace Acme\Test;
 
-use Acme\Alphanumeric;
+use Acme\Characters\Alphanumeric;
+use Acme\Characters\Hex;
 use Acme\Hnb;
 use Acme\HnbSolver;
 use Acme\Solvers\BruteForceSolver;
@@ -72,7 +73,7 @@ class HnbSolverTest extends TestCase
     {
         return [
             [BruteForceSolver::class, ['a', 'b', 'c', 'd', 'e'], 1],
-            [SlightlyCarefulSolver::class, ['a', 'b', 'c', 'd', 'e'], 3],
+            [SlightlyCarefulSolver::class, Hex::asArray(), 4],
             [SlightlyCarefulSolver::class, Alphanumeric::asArray(), 2],
         ];
     }

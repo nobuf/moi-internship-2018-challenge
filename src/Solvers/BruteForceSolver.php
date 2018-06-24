@@ -2,7 +2,6 @@
 
 namespace Acme\Solvers;
 
-use Acme\Hnb;
 use Acme\HnbSolver;
 use Acme\Permutation;
 
