@@ -63,15 +63,20 @@ class Hnb
         }
     }
 
+    private function generateAnswer(): array
+    {
+        $indexes = (array)array_rand($this->getCharacters(), $this->getLevel());
+
+        return array_map(function ($index) {
+            return $this->getCharacters()[$index];
+        }, $indexes);
+    }
+
     public function start(): self
     {
         $this->validate();
 
-        $indexes = (array)array_rand($this->getCharacters(), $this->getLevel());
-
-        $this->setAnswer(array_map(function ($index) {
-            return $this->getCharacters()[$index];
-        }, $indexes));
+        $this->setAnswer($this->generateAnswer());
 
         return $this;
     }
